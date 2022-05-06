@@ -13,7 +13,7 @@ cat ./$(1).wasm | gzip -n -9 > ${compiled_dir}/$(1).wasm.gz
 rm ./$(1).wasm
 endef
 
-CONTRACTS = permits storage
+CONTRACTS = permits storage xcontract-calls
 
 debug: setup
 	(cd ${contracts_dir}; ${build-debug})
@@ -28,6 +28,9 @@ compress_all: setup
 
 compress-snip20: setup
 	$(call opt_and_compress,snip20,snip20_reference_impl)
+
+compress-xcontract-calls: setup
+	$(call opt_and_compress,xcontract_calls,xcontract_calls)
 
 compress-%: setup
 	$(call opt_and_compress,$*,$*)

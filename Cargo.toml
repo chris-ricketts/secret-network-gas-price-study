@@ -1,11 +1,12 @@
 [workspace]
 members = [
-    # Contracts
-    "contracts/permits",
-    "contracts/storage",
+  # Contracts
+  "contracts/permits",
+  "contracts/storage",
+  "contracts/xcontract-calls",
 
-    # Tester
-    "integration-testing"
+  # Tester
+  "integration-testing",
 ]
 
 [profile.release]
@@ -18,3 +19,4 @@ codegen-units = 1
 panic = 'abort'
 incremental = false
 overflow-checks = true
+
